@@ -4,20 +4,24 @@
   "description": "Auto choose color between two colors.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter spec ./tests/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JSitter/color-tweener.git"
   },
   "keywords": [
-    "Color",
-    "chooser."
+    "color",
+    "chooser"
   ],
   "author": "Justin Sitter",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JSitter/color-tweener/issues"
   },
-  "homepage": "https://github.com/JSitter/color-tweener#readme"
+  "homepage": "https://github.com/JSitter/color-tweener#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1"
+  }
 }
