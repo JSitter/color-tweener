@@ -6,13 +6,12 @@
 const colorRange = (a, b) => {
 
   // private props
-  var colorA = setColorA(a);
-  var colorB = setColorB(b);
+  setColorA(a);
+  setColorB(b);
   var vecA = convertStringToDecVec(colorA)
   var vecB = convertStringToDecVec(colorB)
   var percent = 0;
   var leadingHash = False
-
 
   // private methods
   function gradientDescent(percent){
@@ -40,12 +39,12 @@ const colorRange = (a, b) => {
     return colorDec;
   }
 
-  function convertDecVecToHex(color_vector){
-    colorHex = []
-    for(color in color_vector){
-      colorHex.append(color_vector[color].toString(16));
-    }
-  }
+  // function convertDecVecToHex(color_vector){
+  //   colorHex = []
+  //   for(color in color_vector){
+  //     colorHex.append(color_vector[color].toString(16));
+  //   }
+  // }
 
   function convertVecToString(colorVec){
     colorString = ""
@@ -57,17 +56,17 @@ const colorRange = (a, b) => {
 
   // public
   function setColorA(a) {
-    if(a.contains("#")){
-      this.leadingHash = True;
+    if(a.includes("#")){
+      this.leadingHash = true;
     }
-    colorA = a.replace("#", "");
+    this.colorA = a.replace("#", "");
   }
 
   function setColorB(b){
-    if(b.contains("#")){
-      this.leadingHash = True;
+    if(b.includes("#")){
+      this.leadingHash = true;
     }
-    colorB = b.replace("#", "");
+    this.colorB = b.replace("#", "");
   }
 
   function getColorAt(p) {
@@ -86,8 +85,6 @@ const colorRange = (a, b) => {
   function getColorB() {
     return colorB;
   }
-
-  
 
   // public methods
   return {
